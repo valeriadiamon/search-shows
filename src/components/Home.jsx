@@ -1,35 +1,15 @@
-import axios from 'axios'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import ShowCards from './ShowCards'
+import useFetcher from '../hooks/useFetcher'
 
 const Home = () => {
   const inpShow = useRef(null)
-  const [ consulta, setConsul ] = useState(null)
-
-  const getShow = async (query='stranger') => {
-    return axios.get(`https://api.tvmaze.com/search/shows?q=${query}`)
-  }
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await getShow()
-        setConsul(data)
-        console.log(data)
-      }
-      catch (error){
-        console.log('ocurrio un error',error.response.status)
-        setConsul(error.response.status)
-      }
-    }
-    getData()
-  }, [])
-
+  const [query, setQuery] = useState('stranger')
+  const { dataState: consulta } = useFetcher(query)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { data } = await getShow(inpShow.current.value)
-    setConsul(data)
+    setQuery(inpShow.current.value)
     e.target.reset()
   }
 
