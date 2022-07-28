@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Episodes from "./components/Episodes";
 import Home from "./components/Home";
+import Cast from "./components/Cast";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/episodes/:id" element={<Episodes/>}/>
+          <Route path="/cast/:id" element={<Cast/>}/>
         </Routes>
       </Router>
         {/*<Router>

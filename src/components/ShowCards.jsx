@@ -31,9 +31,8 @@ const ShowCards = ({ data }) => {
           </ul>
           <p style={{textAlign: 'left', fontSize:'0.6rem', textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', width:'10rem' }}><b>See more: </b>
           <a href={item.show?.url} target="_blank"> {item.show?.url} </a> </p>
-          <Link to={`/episodes/${item.show.id}`}> Episodes </Link>
-          {/*<Link to={`/episodes/${item.show.id}`}>Episodes</Link>*/}
-          {/* <a href="#" style={{padding:'0.5rem'}} class="btn">Episodes</a> */}
+          <Link to={`/episodes/${item.show.id}`}> <button className='btn p-2'> Episodes </button></Link>
+          <Link to={`/cast/${item.show.id}`}> <button className='btn p-2'>Cast</button> </Link>
         </div>
       </div>
       )

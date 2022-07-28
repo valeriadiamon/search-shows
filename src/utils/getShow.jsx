@@ -6,3 +6,6 @@ export const getShow = async (query) => {
 export const getEpisode = async (id) => {
     return await axios.get(`https://api.tvmaze.com/shows/${id}/episodes`)
   }
+export const getCast = async (id) => {
+    return await axios.get(`https://api.tvmaze.com/shows/${id}/cast`)
+  }

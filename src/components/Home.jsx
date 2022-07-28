@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import ShowCards from './ShowCards'
+import Loading from './Loading'
 import useFetcher from '../hooks/useFetcher'
 
 const Home = () => {
@@ -21,7 +22,7 @@ const Home = () => {
         <button className="btn btn-outline-secondary" style={{borderRadius:"0.5rem"}} type="Submit" >Search</button>
       </div>
       </div>
-        {consulta == null ? 'no hay datos' : <ShowCards data={ consulta }/> }
+        {consulta == null ? <Loading/> : <ShowCards data={ consulta }/> }
       </form>
   )
 }

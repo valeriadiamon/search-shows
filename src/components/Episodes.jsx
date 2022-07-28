@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { getEpisode } from "../utils/getShow"
 import { useEffect, useState } from "react"
+import Loading from "./Loading"
 
 const Episodes = () => {
   const param = useParams()
@@ -23,7 +24,7 @@ const Episodes = () => {
 
   return (
     <div className="d-flex flex-wrap justify-content-center">
-       { consulta == null ? 'no hay nada' :
+       { consulta == null ? <Loading/> :
        consulta.map(item => (
         <div className="card p-0 m-1" style={{width: '16rem'}}>
         <img src={ item.image?.medium || noimg } className="card-img-top" alt={ item.name } /> 
