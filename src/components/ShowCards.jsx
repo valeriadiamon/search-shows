@@ -1,6 +1,6 @@
 //import { FaStar } from 'react-icons/fa'
 //import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import noimg from '../assets/no-image.png'
 
 const ShowCards = ({ data }) => {
@@ -31,7 +31,9 @@ const ShowCards = ({ data }) => {
           </ul>
           <p style={{textAlign: 'left', fontSize:'0.6rem', textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', width:'10rem' }}><b>See more: </b>
           <a href={item.show?.url} target="_blank"> {item.show?.url} </a> </p>
-          <a href="#" style={{padding:'0.5rem'}} class="btn">Episodes</a>
+          <Link to={`/episodes/${item.show.id}`}> Episodes </Link>
+          {/*<Link to={`/episodes/${item.show.id}`}>Episodes</Link>*/}
+          {/* <a href="#" style={{padding:'0.5rem'}} class="btn">Episodes</a> */}
         </div>
       </div>
       )
