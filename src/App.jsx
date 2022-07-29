@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Episodes from "./components/Episodes";
 import Home from "./components/Home";
 import Cast from "./components/Cast";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -12,12 +13,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/episodes/:id" element={<Episodes/>}/>
           <Route path="/cast/:id" element={<Cast/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
-        {/*<Router>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/users">Users</Link>
-        </Router>*/}
     </div>    
   )
 }

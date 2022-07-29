@@ -30,7 +30,7 @@ const Cast = () => {
                 <img src={ item.person.image?.medium || noimg } className="card-img-top" alt={ item.person.name } /> <div className='card-body'>
                     <p><b>Person: </b> {item.person.name}</p>
                     <p style={{textAlign: 'left', fontSize:'0.6rem', textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', width:'7rem' }}><b>See more: </b>
-                    <a href={item.url} target="_blank"> {item.person.url} </a> </p>
+                    <a href={item.person.url} target="_blank"> {item.person.url} </a> </p>
                 </div>
             </div>
             <div style={{width: '9rem'}}>
@@ -38,7 +38,7 @@ const Cast = () => {
                 <div className='card-body'>
                     <p><b>Character: </b> {item.character.name}</p>
                     <p style={{textAlign: 'left', fontSize:'0.6rem', textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', width:'7rem' }}><b>See more: </b>
-                    <a href={item.url} target="_blank"> {item.character.url} </a> </p>
+                    <a href={item.character.url} target="_blank"> {item.character.url} </a> </p>
                 </div>
             </div>
         </div>
