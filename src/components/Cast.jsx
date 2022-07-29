@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
-import { getCast } from "../utils/getShow"
 import { useEffect, useState } from "react"
+import { getCast } from "../utils/getShow"
 import Loading from "./Loading"
+import noimg from '../assets/no-image.png'
 
 const Cast = () => {
   const param = useParams()
