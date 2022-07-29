@@ -25,7 +25,7 @@ const Cast = () => {
     <div className="d-flex flex-wrap justify-content-center">
        { consulta == null ? <Loading/> :
        consulta.map(item => (
-        <div className="d-flex flex-row card p-0 m-1" style={{width: '18rem'}}>
+        <div key={item.person.id} className="d-flex flex-row card p-0 m-1" style={{width: '18rem'}}>
             <div style={{width: '9rem'}}>
                 <img src={ item.person.image?.medium || noimg } className="card-img-top" alt={ item.person.name } /> <div className='card-body'>
                     <p><b>Person: </b> {item.person.name}</p>

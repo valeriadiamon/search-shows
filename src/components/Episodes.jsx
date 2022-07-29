@@ -26,7 +26,7 @@ const Episodes = () => {
     <div className="d-flex flex-wrap justify-content-center">
        { consulta == null ? <Loading/> :
        consulta.map(item => (
-        <div className="card p-0 m-1" style={{width: '16rem'}}>
+        <div key={item.id} className="card p-0 m-1" style={{width: '16rem'}}>
         <img src={ item.image?.medium || noimg } className="card-img-top" alt={ item.name } /> 
         <div className="card-header">
           <h5 className="card-title" style={{textTransform:'uppercase'}}>

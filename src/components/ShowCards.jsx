@@ -12,7 +12,7 @@ const ShowCards = ({ data }) => {
     <div className="d-flex flex-wrap justify-content-center">
       {data.map(item => 
       (
-      <div className="card p-0 m-1" style={{width: '12rem'}}>
+      <div key={ item.show.id } className="card p-0 m-1" style={{width: '12rem'}}>
         <img src={ item.show.image?.medium || noimg } className="card-img-top" alt={ item.show.name } /> 
         <div className="card-header">
           <h5 className="card-title" style={{textTransform:'uppercase'}}>
@@ -27,7 +27,7 @@ const ShowCards = ({ data }) => {
           { item.show.rating?.average == null ? '': <p><b>Rating:</b> { item.show.rating.average} </p>  }
           { item.show.genres.length == 0 ? '' : <p ><b>Gender:</b></p>}
           <ul>
-          { item.show.genres.map(elem => <li>{elem}</li>) }
+          { item.show.genres.map( (elem,index) => <li key={index}>{elem}</li>) }
           </ul>
           <p style={{textAlign: 'left', fontSize:'0.6rem', textOverflow:'ellipsis', whiteSpace:'nowrap', overflow:'hidden', width:'10rem' }}><b>See more: </b>
           <a href={item.show?.url} target="_blank"> {item.show?.url} </a> </p>
